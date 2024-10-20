@@ -2,9 +2,10 @@ const express = require("express");
 require("dotenv").config();
 const app = express();
 const dbConfig = require("./dbConfig/dbConfig")
-const cors = require("cors")
-app.use(cors());
+var cors = require('cors')
 
+ 
+app.use(cors())
 const portfoilioRoute = require("./routes/portfolioRotes");
 
 app.use(express.json());
