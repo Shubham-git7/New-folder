@@ -4,8 +4,13 @@ const app = express();
 const dbConfig = require("./dbConfig/dbConfig")
 var cors = require('cors')
 
- 
-app.use(cors())
+
+// Apply CORS middleware with optional configurations
+app.use(cors({
+    origin: ["https://client-tau-ebon.vercel.app"], // Set allowed origin
+    methods: ["POST", "GET","PUT"], // Set allowed methods
+    credentials: true // Allow credentials
+}));
 const portfoilioRoute = require("./routes/portfolioRotes");
 
 app.use(express.json());
